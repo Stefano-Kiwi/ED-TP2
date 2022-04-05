@@ -12,5 +12,22 @@ public class Equipo {
         this.nombre = nombre;
         this.ciudad = ciudad;
     }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Ciudad getCiudad() {
+        return this.ciudad;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
     
+
 }
