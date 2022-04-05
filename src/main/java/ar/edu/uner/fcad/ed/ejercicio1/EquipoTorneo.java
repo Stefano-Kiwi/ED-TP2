@@ -1,5 +1,7 @@
 package ar.edu.uner.fcad.ed.ejercicio1;
 
+import java.util.Objects;
+
 /**
  *
  * @author stefa
@@ -20,69 +22,26 @@ public class EquipoTorneo {
         this.golesEnContra = golesEnContra;
     }
 
-    public Equipo getEquipo() {
-        return this.equipo;
-    }
+//    c) Modifique EquipoTorneo de forma que establezca como criterio de comparación la
+// propiedad Equipo y luego Torneo.
+// i. Para la clase Equipo deberá considerar el atributo Nombre.
+// ii. Para la clase Torneo deberá considerar primero el atributo Año y luego Nombre.
 
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
+    
+    @Override
+    public String toString() {
+        return "EquipoTorneo{" + "equipo=" + equipo + ", torneo=" + torneo + ", partJugados=" + partJugados + ", partGanados=" + partGanados + ", partEmpatados=" + partEmpatados + ", partPerdidos=" + partPerdidos + ", golesAFavor=" + golesAFavor + ", golesEnContra=" + golesEnContra + '}';
     }
-
-    public Torneo getTorneo() {
-        return this.torneo;
+    
+    public int getPuntos(){
+        int puntos = 0;
+        puntos = (partGanados*3)+partEmpatados;
+        return puntos;
     }
-
-    public void setTorneo(Torneo torneo) {
-        this.torneo = torneo;
+    public int getDiferenciaGol(){
+        int puntos = 0;
+        puntos = Math.abs(golesAFavor-golesEnContra);
+        return puntos;
     }
-
-    public int getPartJugados() {
-        return this.partJugados;
-    }
-
-    public void setPartJugados(int partJugados) {
-        this.partJugados = partJugados;
-    }
-
-    public int getPartGanados() {
-        return this.partGanados;
-    }
-
-    public void setPartGanados(int partGanados) {
-        this.partGanados = partGanados;
-    }
-
-    public int getPartEmpatados() {
-        return this.partEmpatados;
-    }
-
-    public void setPartEmpatados(int partEmpatados) {
-        this.partEmpatados = partEmpatados;
-    }
-
-    public int getPartPerdidos() {
-        return this.partPerdidos;
-    }
-
-    public void setPartPerdidos(int partPerdidos) {
-        this.partPerdidos = partPerdidos;
-    }
-
-    public int getGolesAFavor() {
-        return this.golesAFavor;
-    }
-
-    public void setGolesAFavor(int golesAFavor) {
-        this.golesAFavor = golesAFavor;
-    }
-
-    public int getGolesEnContra() {
-        return this.golesEnContra;
-    }
-
-    public void setGolesEnContra(int golesEnContra) {
-        this.golesEnContra = golesEnContra;
-    }
-
     
 }
