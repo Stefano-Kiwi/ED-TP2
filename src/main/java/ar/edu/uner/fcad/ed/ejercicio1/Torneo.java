@@ -8,7 +8,7 @@ public class Torneo {
         this.nombre = nombre;
         this.anio = anio;
     }
-
+    
     public String getNombre() {
         return nombre;
     }
