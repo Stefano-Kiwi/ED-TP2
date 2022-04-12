@@ -38,4 +38,5 @@ public abstract EquipoTorneo vallaMenosVencida();
 
 /** Concatena en un String los datos de todos los torneos */
 public abstract String toString();
+
 }
