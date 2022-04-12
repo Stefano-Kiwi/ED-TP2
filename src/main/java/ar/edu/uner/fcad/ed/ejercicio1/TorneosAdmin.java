@@ -7,40 +7,43 @@ public class TorneosAdmin extends TorneoAdminAbstract {
 
     @Override
     public void agregar(EquipoTorneo equipoTorneo) {
-        // TODO Auto-generated method stub
+        
         
     }
 
     @Override
     public void ordenar() {
-        // TODO Auto-generated method stub
+        
         
     }
 
     @Override
     public List<EquipoTorneo> tablaPosiciones(Torneo torneo) {
-        // TODO Auto-generated method stub
+        
         return null;
     }
 
     @Override
     public List<Torneo> todosLosTorneos(Equipo equipo) {
-        // TODO Auto-generated method stub
+        
         return null;
     }
 
     @Override
     public EquipoTorneo masGoleador() {
-        var res= new ArrayList<EquipoTorneo>();
-        for (var Equipo : iterable) {
-            
-        }
-        return res;
+    //     var res= new ArrayList<EquipoTorneo>();
+    //     for (var equipo : equipoTorneoList) {
+    //         if (equipoTorneoList.) {
+                
+    //         }    
+    //     }
+    //     return res;
+    return null;
     }
 
     @Override
     public EquipoTorneo vallaMenosVencida() {
-        // TODO Auto-generated method stub
+        
         return null;
     }
 
