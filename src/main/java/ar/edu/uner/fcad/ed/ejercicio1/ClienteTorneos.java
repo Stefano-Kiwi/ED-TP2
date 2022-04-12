@@ -11,6 +11,7 @@ public class ClienteTorneos {
         Torneo torneo1 = new Torneo("libertadores", 2020);
         EquipoTorneo piratas = new EquipoTorneo(boca, torneo1, 4, 2, 20, 4, 2, 4);
         System.out.println("piratas = " + piratas);
+        
         System.out.println("Diferencia entre goles:"+piratas.getDiferenciaGol());
         
     }
