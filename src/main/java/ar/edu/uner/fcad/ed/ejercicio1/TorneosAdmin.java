@@ -19,14 +19,14 @@ public class TorneosAdmin extends TorneoAdminAbstract {
 
     @Override
     public List<EquipoTorneo> tablaPosiciones(Torneo torneo) {
-        var goleador= new EquipoTorneo();
+        var res= new ArrayList<EquipoTorneo>();
         for (var equipoTorneo : equipoTorneoList) {
-            if (equipoTorneo.getGolesAFavor()>aux) {
-                goleador = equipoTorneo;
-                aux = equipoTorneo.getGolesAFavor();
+            if () {
+                
+                
             }    
         }
-        return goleador;
+        return null;
     }
 
     @Override
