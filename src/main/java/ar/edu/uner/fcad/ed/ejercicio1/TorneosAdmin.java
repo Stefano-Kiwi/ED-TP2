@@ -7,7 +7,7 @@ public class TorneosAdmin extends TorneoAdminAbstract {
 
     @Override
     public void agregar(EquipoTorneo equipoTorneo) {
-        
+    this.agregar(equipoTorneo);    
         
     }
 
@@ -30,11 +30,13 @@ public class TorneosAdmin extends TorneoAdminAbstract {
     }
 
     @Override
-    public EquipoTorneo masGoleador(List <EquipoTorneo> pepegrillo) {
+    public EquipoTorneo masGoleador() {
         var res= new EquipoTorneo();
-        for (var EquipoTorneo : equipoTorneoList) {
-            if (equipoTorneoList.) {
-                
+        int aux=0;
+        for (var equipoTorneo : equipoTorneoList) {
+            if (equipoTorneo.getGolesAFavor()>aux) {
+            aux=equipoTorneo.getGolesAFavor();
+            res= equipoTorneo;    
             }    
         }
         return res;

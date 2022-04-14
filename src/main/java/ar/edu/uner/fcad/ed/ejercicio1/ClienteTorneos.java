@@ -25,6 +25,7 @@ public class ClienteTorneos {
         ListaTorneo.add(equipo1);
         ListaTorneo.add(equipo2);
         ListaTorneo.add(equipo3);
+        var admin = new TorneoAdmin();
         
     }
 }
