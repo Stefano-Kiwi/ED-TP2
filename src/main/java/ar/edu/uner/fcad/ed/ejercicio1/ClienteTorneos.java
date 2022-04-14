@@ -26,7 +26,6 @@ public class ClienteTorneos {
         ListaTorneo.add(equipo1);
         ListaTorneo.add(equipo2);
         ListaTorneo.add(equipo3);
-        var admin = new TorneoAdmin();
         
         TorneosAdmin administrador = new TorneosAdmin();
         administrador.agregar(equipo1);
@@ -43,9 +42,9 @@ public class ClienteTorneos {
         Equipo salsamora = new Equipo("salseros", new Ciudad("Republica del Congo"));
         
         Torneo torneo2 = new Torneo("copaMilk", 2009);
-        EquipoTorneo equipo01 = new EquipoTorneo(sanlo, torneo2, 0, 0, 0, 0, 0, 0);
-        EquipoTorneo equipo02 = new EquipoTorneo(sanlo, torneo2, 0, 0, 0, 0, 0, 0);
-        EquipoTorneo equipo03 = new EquipoTorneo(sanlo, torneo2, 0, 0, 0, 0, 0, 0);
+        EquipoTorneo equipo01 = new EquipoTorneo(barsa, torneo2, 10, 0, 0, 0, 0, 0);
+        EquipoTorneo equipo02 = new EquipoTorneo(manzana, torneo2, 10, 0, 0, 0, 0, 0);
+        EquipoTorneo equipo03 = new EquipoTorneo(salsamora, torneo2, 10, 0, 0, 0, 0, 0);
         
         
     }
