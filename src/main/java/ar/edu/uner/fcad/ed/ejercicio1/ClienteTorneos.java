@@ -10,8 +10,9 @@ public class ClienteTorneos {
     public static void main(String[] args) {
         List <EquipoTorneo> ListaTorneo = new ArrayList();
         Equipo boca = new Equipo("bokita", new Ciudad("CABA"));
-        Equipo river = new Equipo("bokita", new Ciudad("CABA"));
-        Equipo sanlo = new Equipo("bokita", new Ciudad("CABA"));
+        Equipo river = new Equipo("river", new Ciudad("CABA"));
+        Equipo sanlo = new Equipo("sanlo", new Ciudad("CABA"));
+        
 
         System.out.println("boca = " + boca);
         Torneo torneo1 = new Torneo("libertadores", 2020);
@@ -25,6 +26,26 @@ public class ClienteTorneos {
         ListaTorneo.add(equipo1);
         ListaTorneo.add(equipo2);
         ListaTorneo.add(equipo3);
+        
+        TorneosAdmin administrador = new TorneosAdmin();
+        administrador.agregar(equipo1);
+        administrador.agregar(equipo2);
+        administrador.agregar(equipo3);
+        System.out.println("Mayor goleador: "+administrador.masGoleador());
+        
+        /*
+        Segundo torneo
+        
+        */
+        Equipo barsa = new Equipo("barcelona", new Ciudad("Madrid"));
+        Equipo manzana = new Equipo("manzanero", new Ciudad("Concordia"));
+        Equipo salsamora = new Equipo("salseros", new Ciudad("Republica del Congo"));
+        
+        Torneo torneo2 = new Torneo("copaMilk", 2009);
+        EquipoTorneo equipo01 = new EquipoTorneo(sanlo, torneo2, 0, 0, 0, 0, 0, 0);
+        EquipoTorneo equipo02 = new EquipoTorneo(sanlo, torneo2, 0, 0, 0, 0, 0, 0);
+        EquipoTorneo equipo03 = new EquipoTorneo(sanlo, torneo2, 0, 0, 0, 0, 0, 0);
+        
         
     }
 }
