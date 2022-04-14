@@ -30,15 +30,14 @@ public class TorneosAdmin extends TorneoAdminAbstract {
     }
 
     @Override
-    public EquipoTorneo masGoleador() {
-    //     var res= new ArrayList<EquipoTorneo>();
-    //     for (var equipo : equipoTorneoList) {
-    //         if (equipoTorneoList.) {
+    public EquipoTorneo masGoleador(List <EquipoTorneo> pepegrillo) {
+        var res= new EquipoTorneo();
+        for (var EquipoTorneo : equipoTorneoList) {
+            if (equipoTorneoList.) {
                 
-    //         }    
-    //     }
-    //     return res;
-    return null;
+            }    
+        }
+        return res;
     }
 
     @Override
