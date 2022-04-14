@@ -7,7 +7,7 @@ public class TorneosAdmin extends TorneoAdminAbstract {
 
     @Override
     public void agregar(EquipoTorneo equipoTorneo) {
-    this.agregar(equipoTorneo); 
+    //this.agregar(equipoTorneo); 
 }   
 
 
@@ -20,13 +20,16 @@ public class TorneosAdmin extends TorneoAdminAbstract {
     @Override
     public List<EquipoTorneo> tablaPosiciones(Torneo torneo) {
         var res= new ArrayList<EquipoTorneo>();
+                    System.out.println("nombre del torneo que le pasas por parametro: " + torneo.getNombre());
         for (var equipoTorneo : equipoTorneoList) {
-            if () {
-                
-                
-            }    
+        System.out.println(equipoTorneo.getTorneo().getNombre());
+            System.out.println("pepe" );
+        if(torneo.getNombre().equals(equipoTorneo.getTorneo().getNombre())){
+            System.out.println("PEPE");    
+        }    
+                    
         }
-        return null;
+        return res;
     }
 
     @Override
