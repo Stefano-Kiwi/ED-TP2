@@ -1,16 +1,21 @@
 package ar.edu.uner.fcad.ed.ejercicio1;
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
-
 /**
  *
  * @author stefa
  */
-public class EquipoTorneo {
+public class EquipoTorneo implements Comparable<EquipoTorneo> {
     private Equipo equipo;
     private Torneo torneo;
     private int partJugados,partGanados,partEmpatados,partPerdidos,golesAFavor,golesEnContra;
-
+    private List<EquipoTorneo> torneoList;
+   public EquipoTorneo(){
+        this.torneoList = new ArrayList();
+    }
     public EquipoTorneo(Equipo equipo, Torneo torneo, int partJugados, int partGanados, int partEmpatados, int partPerdidos, int golesAFavor, int golesEnContra) {
         this.equipo = equipo;
         this.torneo = torneo;
@@ -21,15 +26,24 @@ public class EquipoTorneo {
         this.golesAFavor = golesAFavor;
         this.golesEnContra = golesEnContra;
     }
-
-    public Equipo getEquipo() {
-        return this.equipo;
+    
+    public void ordenar(){
+    Collections.sort(torneoList);
     }
+    
+ public void ordenar(Comparator<EquipoTorneo> comparator){
+       torneoList.sort(comparator);
+    }
+
 
     public void setEquipo(Equipo equipo) {
         this.equipo = equipo;
     }
 
+    public Equipo getEquipo() {
+        return equipo;
+    }
+    
     public Torneo getTorneo() {
         return this.torneo;
     }
@@ -91,13 +105,11 @@ public class EquipoTorneo {
 // i. Para la clase Equipo deberá considerar el atributo Nombre.
 // ii. Para la clase Torneo deberá considerar primero el atributo Año y luego Nombre.
 
-    public EquipoTorneo() {
-    }
 
-    
-    @Override
-    public String toString() {
-        return "EquipoTorneo{" + "equipo=" + equipo + ", torneo=" + torneo + ", partJugados=" + partJugados + ", partGanados=" + partGanados + ", partEmpatados=" + partEmpatados + ", partPerdidos=" + partPerdidos + ", golesAFavor=" + golesAFavor + ", golesEnContra=" + golesEnContra + '}';
+    public int compareTo(EquipoTorneo o) {
+        int resultado = 0;
+        resultado = this.equipo.getNombre().compareTo(o.getEquipo().getNombre());
+        return resultado;
     }
     
     public int getPuntos(){
@@ -110,5 +122,12 @@ public class EquipoTorneo {
         puntos = Math.abs(golesAFavor-golesEnContra);
         return puntos;
     }
+   
+    public String toString() {
+        return "EquipoTorneo{" + "equipo=" + equipo + ", torneo=" + torneo + ", partJugados=" + partJugados + ", partGanados=" + partGanados + ", partEmpatados=" + partEmpatados + ", partPerdidos=" + partPerdidos + ", golesAFavor=" + golesAFavor + ", golesEnContra=" + golesEnContra + "\n";
+    }
+
+   
+  
     
 }

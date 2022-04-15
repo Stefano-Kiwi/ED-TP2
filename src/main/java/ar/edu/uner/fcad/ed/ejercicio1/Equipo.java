@@ -1,7 +1,7 @@
 package ar.edu.uner.fcad.ed.ejercicio1;
 
 import java.util.Objects;
-
+import java.util.Comparator;
 /**
  *
  * @author stefa
@@ -61,7 +61,6 @@ public class Equipo {
     public String toString() {
         return "Equipo{" + "nombre=" + nombre + ", ciudad=" + ciudad + '}';
     }
-    
-    
+
     
 }
