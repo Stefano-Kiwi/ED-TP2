@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class TorneoAdminAbstract {
     
-protected List<EquipoTorneo> equipoTorneoList;
+protected final List<EquipoTorneo> equipoTorneoList;
 
 public TorneoAdminAbstract(){
     this.equipoTorneoList = new ArrayList();

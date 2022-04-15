@@ -13,8 +13,6 @@ public class ClienteTorneos {
         Equipo river = new Equipo("river", new Ciudad("CABA"));
         Equipo sanlo = new Equipo("sanlo", new Ciudad("CABA"));
         
-
-        System.out.println("boca = " + boca);
         Torneo torneo1 = new Torneo("libertadores", 2020);
         EquipoTorneo equipo1 = new EquipoTorneo(boca, torneo1, 12, 2, 6, 4, 2, 3);
         EquipoTorneo equipo2 = new EquipoTorneo(river, torneo1, 12, 2, 6, 4, 4, 5);
@@ -45,7 +43,9 @@ public class ClienteTorneos {
         EquipoTorneo equipo01 = new EquipoTorneo(barsa, torneo2, 10, 0, 0, 0, 0, 0);
         EquipoTorneo equipo02 = new EquipoTorneo(manzana, torneo2, 10, 0, 0, 0, 0, 0);
         EquipoTorneo equipo03 = new EquipoTorneo(salsamora, torneo2, 10, 0, 0, 0, 0, 0);
-        
-        
+
     }
 }
+
+
+//PRUEBA DE PUSH
