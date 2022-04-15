@@ -1,5 +1,6 @@
 package ar.edu.uner.fcad.ed.ejercicio1;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ public class ClienteTorneos {
         
         Equipo equipo1 = new Equipo("CABJ",new Ciudad("CABA"));
         Equipo equipo2 = new Equipo("CARP",new Ciudad("CABA"));
-        Equipo equipo3 = new Equipo("CASLA",new Ciudad("CABA"));
+        Equipo equipo3 = new Equipo("PSTP",new Ciudad("CABA"));
         Equipo equipo4 = new Equipo("FCB",new Ciudad("España"));
         Equipo equipo5 = new Equipo("RMA",new Ciudad("España"));
         Equipo equipo6 = new Equipo("RVM",new Ciudad("España"));
@@ -53,8 +54,11 @@ public class ClienteTorneos {
         System.out.println("Equipo al que menos goles le metieron: "+Torneos.vallaMenosVencida());
         System.out.println("Torneos participados por:(" + equipo1.getNombre() + ")" + Torneos.todosLosTorneos(new Equipo("CABJ",new Ciudad("CABA"))));
         System.out.println("Tabla de posiciones por parametro:(" + torneo1.getNombre() + ")" + Torneos.tablaPosiciones(torneo1));
-
+        System.out.println("***************");
+        Torneos.ordenar();
+        System.out.println("Ordenado por nombre:");
+        System.out.println(Torneos.toString()); 
         
         
-    }
+}
 }
