@@ -8,31 +8,22 @@ import java.util.List;
  */
 public class ClienteTorneos {
     public static void main(String[] args) {
-        List <EquipoTorneo> ListaTorneo = new ArrayList();
-        Equipo boca = new Equipo("bokita", new Ciudad("CABA"));
-        Equipo river = new Equipo("river", new Ciudad("CABA"));
-        Equipo sanlo = new Equipo("sanlo", new Ciudad("CABA"));
+        TorneosAdmin Torneos = new TorneosAdmin();
+        
+        Equipo equipo1 = new Equipo("CABJ", new Ciudad("CABA"));
+        Equipo equipo2 = new Equipo("CARP", new Ciudad("CABA"));
+        Equipo equipo3 = new Equipo("CASLA", new Ciudad("CABA"));
+        Equipo equipo4 = new Equipo("FCB", new Ciudad("CABA"));
+        Equipo equipo5 = new Equipo("RMA", new Ciudad("CABA"));
+  
         
 
-        System.out.println("boca = " + boca);
         Torneo torneo1 = new Torneo("libertadores", 2020);
-        EquipoTorneo equipo1 = new EquipoTorneo(boca, torneo1, 12, 2, 6, 4, 2, 3);
-        EquipoTorneo equipo2 = new EquipoTorneo(river, torneo1, 12, 2, 6, 4, 4, 5);
-        EquipoTorneo equipo3 = new EquipoTorneo(sanlo, torneo1, 12, 2, 6, 4, 6, 7);
+        EquipoTorneo equipotorneo1 = new EquipoTorneo(equipo1, torneo1, 12, 2, 6, 4, 2, 3);
+        EquipoTorneo equipotorneo2 = new EquipoTorneo(equipo2, torneo1, 12, 2, 6, 4, 4, 5);
+        EquipoTorneo equipotorneo3 = new EquipoTorneo(equipo3, torneo1, 12, 2, 6, 4, 6, 7);
 
-        System.out.println("equipo1 = " + equipo1);
-        System.out.println("Cantidad de puntos que le corresponde:" +equipo1.getPuntos());
-        System.out.println("Diferencia entre goles:"+equipo1.getDiferenciaGol());
-        ListaTorneo.add(equipo1);
-        ListaTorneo.add(equipo2);
-        ListaTorneo.add(equipo3);
-        
-        TorneosAdmin administrador = new TorneosAdmin();
-        administrador.agregar(equipo1);
-        administrador.agregar(equipo2);
-        administrador.agregar(equipo3);
-        System.out.println("Mayor goleador: "+administrador.masGoleador());
-        administrador.tablaPosiciones(torneo1);
+        //administrador.tablaPosiciones(torneo1);
         /*
         Segundo torneo
         
@@ -45,7 +36,13 @@ public class ClienteTorneos {
         EquipoTorneo equipo01 = new EquipoTorneo(barsa, torneo2, 10, 0, 0, 0, 0, 0);
         EquipoTorneo equipo02 = new EquipoTorneo(manzana, torneo2, 10, 0, 0, 0, 0, 0);
         EquipoTorneo equipo03 = new EquipoTorneo(salsamora, torneo2, 10, 0, 0, 0, 0, 0);
-        
-        
+      
+        System.out.println("Cantidad de puntos que le corresponde:" +equipotorneo1.getPuntos());
+        System.out.println("Diferencia entre goles:"+equipotorneo1.getDiferenciaGol());
+        Torneos.agregar(equipotorneo1);
+        Torneos.agregar(equipotorneo2);
+        Torneos.agregar(equipotorneo3);
+        System.out.println("Mayor goleador: "+Torneos.masGoleador());
+        System.out.println("Torneos participados por (Equipo): "+Torneos.todosLosTorneos(new Equipo("CABJ",new Ciudad("CABA"))));
     }
 }
