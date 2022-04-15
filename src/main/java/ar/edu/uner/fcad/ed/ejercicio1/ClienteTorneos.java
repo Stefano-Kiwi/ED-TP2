@@ -32,7 +32,7 @@ public class ClienteTorneos {
         administrador.agregar(equipo2);
         administrador.agregar(equipo3);
         System.out.println("Mayor goleador: "+administrador.masGoleador());
-        
+        administrador.tablaPosiciones(torneo1);
         /*
         Segundo torneo
         
