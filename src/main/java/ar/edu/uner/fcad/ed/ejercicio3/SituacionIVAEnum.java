@@ -1,5 +1,8 @@
 package ar.edu.uner.fcad.ed.ejercicio3;
 
-public class SituacionIVAEnum {
-    
+public enum SituacionIVAEnum {
+    RESP_INSCRIPTO,
+    RESP_NO_INSCRIPTO,
+    CONSUMIDOR_FINAL,
+    RESP_MONOTRIBUTO;
 }
