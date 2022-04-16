@@ -26,6 +26,8 @@ public class ClienteCreditos {
         Creditos.add(credito5);
         Creditos.add(credito2);
         Creditos.add(credito3);
+        Creditos.add(credito6);
+
         System.out.println(Creditos.size());
         System.out.println(Creditos.get(2));
         System.out.println("Removiendo un elemento");
@@ -34,7 +36,7 @@ public class ClienteCreditos {
         System.out.println("Filtrado por tipo de Cliente");
         System.out.println(Creditos.creditosPorClienteTipo(ClienteTipoEnum.PERSONA));
         System.out.println("Filtrado por tipo de Credito y Sucursal");
-        System.out.println(Creditos.creditosPorCreditoTipoySucursal(new CreditoTipo("Prestamo", 2000.00, 10000.50, 1, 3, ClienteTipoEnum.COMERCIO, 2.50),new Sucursal("Sucursal 2")));
+        System.out.println(Creditos.creditosPorCreditoTipoySucursal(new CreditoTipo("Prestamo", 2000.00, 10000.50, 1, 3, ClienteTipoEnum.PERSONA, 2.5),new Sucursal("Sucursal 1")));
         System.out.println("Creditos inferiores a: 5000");
         System.out.println(Creditos.creditosInferioresA(5000.00));
         System.out.println("Creditos superiores a: 50000");
@@ -44,7 +46,10 @@ public class ClienteCreditos {
         System.out.println(Creditos);
 
         Creditos.creditosInferioresA(0);
-            
+        
+        System.out.println("Ordenados por Total a devolver");
+        Creditos.ordenar(new ClientesDevolverComparator());
+        System.out.println(Creditos);
         } catch (Exception e) {
         
     }
