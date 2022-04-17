@@ -1,12 +1,13 @@
 package ar.edu.uner.fcad.ed.ejercicio2;
 
 import java.util.Objects;
+import java.util.Comparator;
 
 /**
  *
  * @author stefa
  */
-public class Cliente {
+public class Cliente implements Comparable <Cliente>  {
    
     private String Apellido, Nombre;
     private int Documento;
@@ -84,9 +85,20 @@ public class Cliente {
     @Override
     public String toString() {
         return "Cliente{" + "Apellido=" + Apellido + ", Nombre=" + Nombre + ", Documento=" + Documento + ", Tipo=" + Tipo + '}';
-    }
-    
-    
-    
+    } 
+
+    public int compareTo(Cliente o) {
+       int resultado = -1;
+        
+        if(this.Documento == o.getDocumento()){
+            resultado = 0;
+        }else{
+            if(this.Documento == o.getDocumento()){
+                resultado = 1;
+            }
+        }
+        
+        return resultado;
+        }
     
 }
