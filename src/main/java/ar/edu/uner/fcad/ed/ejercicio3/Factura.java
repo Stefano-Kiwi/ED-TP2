@@ -145,25 +145,6 @@ public class Factura implements Comparable<Factura>{
          return resultado;
         }
         
-//     public int compareTo(EquipoTorneo o) {
-//        int resultado = 0;
-//        resultado = this.equipo.getNombre().compareTo(o.getEquipo().getNombre());
-//        return resultado;
-//    }
-//      public int compare(Torneo o1, Torneo o2) {
-//         int resultado = -1;
-//        if(o1.getAnio() == o2.getAnio()){
-//            resultado = 0;
-//        }else{
-//            if(o1.getAnio()> o2.getAnio()){
-//                resultado = 1;
-//            }
-//        }
-//            if(resultado == 0){
-//                resultado = o1.getNombre().compareTo(o2.getNombre());
-//            }
-//        return resultado;
-//    }   
     }
     
     
