@@ -6,7 +6,7 @@ import java.util.Objects;
  *
  * @author stefa
  */
-public class Empresa {
+public class Empresa implements Comparable<Empresa>{
     private String cuit;
     private String razonSocial;
     private SituacionIVAEnum situacionIVA;
@@ -14,6 +14,30 @@ public class Empresa {
     public Empresa(String cuit, String razonSocial, SituacionIVAEnum situacionIVA) {
         this.cuit = cuit;
         this.razonSocial = razonSocial;
+        this.situacionIVA = situacionIVA;
+    }
+
+    public String getCuit() {
+        return cuit;
+    }
+
+    public void setCuit(String cuit) {
+        this.cuit = cuit;
+    }
+
+    public String getRazonSocial() {
+        return razonSocial;
+    }
+
+    public void setRazonSocial(String razonSocial) {
+        this.razonSocial = razonSocial;
+    }
+
+    public SituacionIVAEnum getSituacionIVA() {
+        return situacionIVA;
+    }
+
+    public void setSituacionIVA(SituacionIVAEnum situacionIVA) {
         this.situacionIVA = situacionIVA;
     }
 
@@ -42,6 +66,11 @@ public class Empresa {
     @Override
     public String toString() {
         return "Empresa{" + "cuit=" + cuit + ", razonSocial=" + razonSocial + ", situacionIVA=" + situacionIVA + '}';
+    }
+
+    @Override
+    public int compareTo(Empresa o) {
+        
     }
     
 }
