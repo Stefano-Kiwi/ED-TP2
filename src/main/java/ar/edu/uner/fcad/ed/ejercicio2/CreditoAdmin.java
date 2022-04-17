@@ -40,18 +40,24 @@ public class CreditoAdmin extends CreditoAdminAbstract {
    public  List<Credito> creditosPorCreditoTipoySucursal(CreditoTipo tipo,Sucursal sucursal){
        var res= new ArrayList<Credito>();
         for(var credito : creditosList){   
-                 System.out.println("CREDITO TIPO:"+credito.getTipo());
-                 System.out.println("TIPO:        "+tipo);
-                
-            if (tipo.equals(credito.getTipo())){
-                System.out.println("ANASHE");
-                 System.out.println("CREDITO TIPO:"+credito.getTipo());
-
-             if(credito.getSucursal().equals(sucursal)){
-                 System.out.println("CREDITOSUCURSAL:"+credito.getSucursal());
-                 System.out.println("SUCURSAL"+sucursal);
-               res.add(credito);
-             }   
+            if (credito.getTipo().getDescripcion().equals(tipo.getDescripcion())) {
+                if (credito.getTipo().getMontoMinimo().equals(tipo.getMontoMinimo())) {
+                    if (credito.getTipo().getMontoMaximo().equals(tipo.getMontoMaximo())) {
+                     if (credito.getTipo().getAniosMinimo()==(tipo.getAniosMinimo())) {
+                          if (credito.getTipo().getAniosMaximo()==(tipo.getAniosMaximo())) {
+                               if (credito.getTipo().getClienteTipo()==(tipo.getClienteTipo())) {
+                                    if (credito.getTipo().getTasaInteres().equals(tipo.getTasaInteres())) {
+                                        if(credito.getSucursal().equals(sucursal)){
+                                        res.add(credito);
+                                        }   
+                                    }
+                                }
+                            }
+                         
+                        }
+                    }
+                }
+ 
             }
         }
             return res;
