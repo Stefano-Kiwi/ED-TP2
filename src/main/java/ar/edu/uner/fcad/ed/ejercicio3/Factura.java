@@ -1,7 +1,6 @@
 package ar.edu.uner.fcad.ed.ejercicio3;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Objects;
 
@@ -109,7 +108,7 @@ public class Factura implements Comparable<Factura>{
     @Override
     public String toString() {
         return "Factura{" + "tipoFactura=" + tipoFactura + ", puntoVenta=" + puntoVenta + ", numero=" + numero +
-                ", fecha=" + fecha + ", proveedor=" + proveedor+ "\n" + ", detalleFactura=" + detalleFactura + ", impTotal=" + impTotal + '}';
+                ", fecha=" + fecha + ", proveedor=" + proveedor+ "\n" + ", detalleFactura=" + detalleFactura + ", impTotal=" + impTotal + '}'+"\n";
     }
 
     @Override

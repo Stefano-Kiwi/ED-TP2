@@ -27,7 +27,16 @@ public class FechaFacturaComparator implements Comparator<Factura>{
         int resultado = -1;
         
         if(o1 != null && o2 != null){
-            resultado = o1.getFecha().compareTo(o2.getFecha());
+            if(o1.getFecha().isBefore(o2.getFecha())){
+                resultado = -1;
+            }else{
+                if(o1.getFecha().isAfter(o2.getFecha())){
+                    resultado = 1;
+                }else{
+                    if(o1.getFecha().equals(o2.getFecha()));
+                }
+            }
+           // System.out.println("EL RESULTADOOOOOO DE LA COMPARACION ES: "+resultado);
         }
         
         return resultado;

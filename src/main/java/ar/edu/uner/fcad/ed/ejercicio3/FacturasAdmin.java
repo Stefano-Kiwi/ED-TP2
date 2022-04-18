@@ -47,7 +47,13 @@ public class FacturasAdmin extends FacturasAdminAbstract {
 
     @Override
     public List<ProductoCantidad> top5ProductoCantidad() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<Factura> facturasList1 = this.facturasList;
+        List<ProductoCantidad> top5ProductoCantidad = new ArrayList();
+        
+        for(Factura factura : facturasList){
+                                                // FALTA TERMINAR
+        }
+        
     }
     
 }
