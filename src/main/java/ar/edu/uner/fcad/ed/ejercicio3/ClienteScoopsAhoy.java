@@ -11,26 +11,61 @@ import java.util.List;
  */
 public class ClienteScoopsAhoy {
     public static void main(String[] args) {
-        FacturaDetalle facturaDetalle1 = new FacturaDetalle(111,new Producto(111, "silla"),20,40.00,80.00);
-        List<FacturaDetalle> listaFacturaDetalle = new ArrayList<FacturaDetalle>();
-        listaFacturaDetalle.add(facturaDetalle1);
-        LocalDate fecha1 = LocalDate.of(2020, Month.MARCH, 14);
+        Producto almohada = new Producto(01, "una almohada con detalles azules");
+        Producto sommier = new Producto(02, "Un sommier cómodo y económico");
+        Producto pala = new Producto(03, "Una pala para jardinería");
+        Producto monopoly = new Producto(04, "Un juego para toda la familia");
+        Producto guitarra = new Producto(05, "Una guitarra afinada lista para tocar uno del chaqueño");
+        Producto violin = new Producto(06, "Un violin amarillo");
+        
+        LocalDate fecha1 = LocalDate.of(2020, Month.MARCH, 10);
+        LocalDate fecha2 = LocalDate.of(2042, Month.JULY, 21);
+        LocalDate fecha3 = LocalDate.of(2001, Month.DECEMBER,31);
+        LocalDate fecha4 = LocalDate.of(2020, Month.MARCH, 14);
+        
+        
+        FacturaDetalle facturaDetalle1 = new FacturaDetalle(111,almohada,200,40,80);
+        FacturaDetalle facturaDetalle2 = new FacturaDetalle(22,sommier,2,50,100);
+        FacturaDetalle facturaDetalle3 = new FacturaDetalle(45, pala, 30, 20, 100);
+        FacturaDetalle facturaDetalle4 = new FacturaDetalle(28, monopoly, 1, 15,100);
+        FacturaDetalle facturaDetalle5 = new FacturaDetalle(23, guitarra, 45, 20, 200);
+        FacturaDetalle facturaDetalle6 = new FacturaDetalle(40, violin, 2, 40, 500);
+        
+        
+        List<FacturaDetalle> listaFacturaDetalle1 = new ArrayList<FacturaDetalle>();
+        listaFacturaDetalle1.add(facturaDetalle1);
+        listaFacturaDetalle1.add(facturaDetalle2);
+        listaFacturaDetalle1.add(facturaDetalle3);
+        
+        List<FacturaDetalle> listaFacturaDetalle2 = new ArrayList<FacturaDetalle>();
+        listaFacturaDetalle2.add(facturaDetalle4);
+        listaFacturaDetalle2.add(facturaDetalle5);
+        listaFacturaDetalle2.add(facturaDetalle6);
         
         Empresa empresa1 = new Empresa("101", "pepe", SituacionIVAEnum.CONSUMIDOR_FINAL);
-        Factura factura1 = new Factura(TipoFacturaEnum.FACTURA_A, 1, 01, fecha1,empresa1,listaFacturaDetalle , 0);
+        Empresa empresa2 = new Empresa("404", "carlitos", SituacionIVAEnum.RESP_MONOTRIBUTO);
+        Factura factura1 = new Factura(TipoFacturaEnum.FACTURA_A, 1, 01, fecha1,empresa1,listaFacturaDetalle1 , 0);
+        Factura factura2 = new Factura(TipoFacturaEnum.FACTURA_C,2,05,fecha2,empresa2,listaFacturaDetalle2, 2);
         
-        System.out.println("factura1 = " + factura1);
+        
+        System.out.println("factura1 = " + factura1+ "\n");
         
         FacturasAdmin facturaAdmin = new FacturasAdmin();
         facturaAdmin.add(factura1);
         facturaAdmin.remove(0);
         facturaAdmin.add(factura1);
-        facturaAdmin.ordenar();
-        facturaAdmin.ordenar(c); // DEBEMOS IMPLEMENTAR ESTO
+        facturaAdmin.add(factura2);
         
-        System.out.println("Filtrado por mes y año: "+facturaAdmin.buscarFacturasPorMesAnio(3, 2020));
-        System.out.println("Filtrado por proveedor: "+facturaAdmin.buscarFacturasPorProveedor(empresa1));
-        System.out.println("Factura con mayor importe total: "+facturaAdmin.facturaMasCostosa());
-        System.out.println("Top 5 productos que más se compraron: "+facturaAdmin.top5ProductoCantidad()); // DEBEMOS IMPLEMENTAR ESTO
+        
+        facturaAdmin.ordenar();
+        System.out.println("facturaAdmin sin ordenar = " + facturaAdmin+ "\n");
+        facturaAdmin.ordenar(new FechaFacturaComparator()); // DEBEMOS IMPLEMENTAR ESTO
+        System.out.println("facturaAdmin ordenada por Fecha = " + facturaAdmin+ "\n");
+        
+        
+        System.out.println("Filtrado por mes y año: "+facturaAdmin.buscarFacturasPorMesAnio(3, 2020)+ "\n");
+        System.out.println("Filtrado por proveedor: "+facturaAdmin.buscarFacturasPorProveedor(empresa1)+ "\n");
+        System.out.println("Factura con mayor importe total: "+facturaAdmin.facturaMasCostosa()+ "\n");
+        //System.out.println("Top 5 productos que más se compraron: "+facturaAdmin.top5ProductoCantidad()); // DEBEMOS IMPLEMENTAR ESTO
     }
 }
