@@ -7,7 +7,7 @@ import java.util.Comparator;
  *
  * @author stefa
  */
-public class Cliente implements Comparable <Cliente>  {
+public class Cliente implements Comparable<Cliente>{
    
     private String Apellido, Nombre;
     private int Documento;
@@ -87,18 +87,10 @@ public class Cliente implements Comparable <Cliente>  {
         return "Cliente{" + "Apellido=" + Apellido + ", Nombre=" + Nombre + ", Documento=" + Documento + ", Tipo=" + Tipo + '}';
     } 
 
+    @Override
     public int compareTo(Cliente o) {
-       int resultado = -1;
-        
-        if(this.Documento == o.getDocumento()){
-            resultado = 0;
-        }else{
-            if(this.Documento == o.getDocumento()){
-                resultado = 1;
-            }
-        }
-        
-        return resultado;
-        }
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+       
     
 }

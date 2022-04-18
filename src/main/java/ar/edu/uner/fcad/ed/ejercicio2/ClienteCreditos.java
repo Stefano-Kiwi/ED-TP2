@@ -50,6 +50,10 @@ public class ClienteCreditos {
         System.out.println("Ordenados por Total a devolver");
         Creditos.ordenar(new ClientesDevolverComparator());
         System.out.println(Creditos);
+       System.out.println("Ordenados por DNI de Clientes");
+        Creditos.ordenar(new ClientesPorDocumento());
+        System.out.println(Creditos);
+
         } catch (Exception e) {
         
     }
