@@ -68,9 +68,9 @@ public class Empresa implements Comparable<Empresa>{
         return "Empresa{" + "cuit=" + cuit + ", razonSocial=" + razonSocial + ", situacionIVA=" + situacionIVA + '}';
     }
 
-    @Override
-    public int compareTo(Empresa o) {
-        
-    }
+//    @Override
+//    public int compareTo(Empresa o) {
+//        
+//    }
     
 }

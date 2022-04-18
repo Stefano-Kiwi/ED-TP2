@@ -11,15 +11,15 @@ package ar.edu.uner.fcad.ed.ejercicio2;
 public class ClienteCreditos {
     public static void main(String[] args) {
         try {
-        CreditoAdmin Creditos = new CreditoAdmin();
         Credito devolver = new Credito();
+        CreditoAdmin Creditos = new CreditoAdmin();
   
-        Credito credito1 = new Credito(1, new CreditoTipo("Prestamo", 2000.00, 10000.50, 1, 3, ClienteTipoEnum.PERSONA, 2.5),new Cliente("Altamirano", "Daniel", 42355537, ClienteTipoEnum.PERSONA), 8500.00, 5,new Sucursal("Sucursal 1"),devolver.getTotalDevolver());
-        Credito credito3 = new Credito(3, new CreditoTipo("Prestamo", 1000.0, 200.0, 1, 3, ClienteTipoEnum.COMERCIO, 10.5), new Cliente("Ginobili", "Emanuel", 123124213, ClienteTipoEnum.COMERCIO), 1000.0, 5, new Sucursal("Sucursal 2"),devolver.getTotalDevolver());
-        Credito credito4 = new Credito(4, new CreditoTipo("Prestamo", 4500.00, 10000.50, 1, 3, ClienteTipoEnum.EMPRESADECONSTRUCCION, 15.0),new Cliente("Alcaraz", "Juan", 23617421, ClienteTipoEnum.EMPRESADECONSTRUCCION), 10000000.00, 5,new Sucursal("Sucursal 3"),devolver.getTotalDevolver());
-        Credito credito2 = new Credito(2, new CreditoTipo("Prestamo", 7800.00, 10000.50, 1, 3, ClienteTipoEnum.PERSONA, 2.50),new Cliente("Federer", "Roger", 12364521, ClienteTipoEnum.PERSONA), 20500.00, 5,new Sucursal("Sucursal 1"),devolver.getTotalDevolver());
-        Credito credito5 = new Credito(5, new CreditoTipo("Prestamo", 9100.00, 10000.50, 1, 3, ClienteTipoEnum.PERSONA, 2.50),new Cliente("Del Potro", "Juan Martin", 24357537, ClienteTipoEnum.PERSONA), 18500.00, 5,new Sucursal("Sucursal 5"),devolver.getTotalDevolver());
-        Credito credito6 = new Credito(6, new CreditoTipo("Prestamo", 3900.00, 10000.50, 1, 3, ClienteTipoEnum.COMERCIO, 2.50),new Cliente("Pedro", "Juan", 24357537, ClienteTipoEnum.COMERCIO), 18500.00, 5,new Sucursal("Sucursal 2"),devolver.getTotalDevolver());
+        Credito credito1 = new Credito(1, new CreditoTipo("Prestamo", 10000.00, 100000.00, 1, 3, ClienteTipoEnum.PERSONA, 2.5),new Cliente("Altamirano", "Daniel", 42355537, ClienteTipoEnum.PERSONA), 10500.00, 5,new Sucursal("Sucursal 1"),devolver.getTotalDevolver());
+        Credito credito3 = new Credito(3, new CreditoTipo("Prestamo", 20000.00, 200000.0, 1, 4, ClienteTipoEnum.COMERCIO, 10.5), new Cliente("Ginobili", "Emanuel", 123124213, ClienteTipoEnum.COMERCIO), 21500.0, 5, new Sucursal("Sucursal 2"),devolver.getTotalDevolver());
+        Credito credito4 = new Credito(4, new CreditoTipo("Prestamo", 100000.00, 100000000.00, 1, 6, ClienteTipoEnum.EMPRESADECONSTRUCCION, 15.0),new Cliente("Alcaraz", "Juan", 23617421, ClienteTipoEnum.EMPRESADECONSTRUCCION), 100000001111111111111111111.00, 5,new Sucursal("Sucursal 3"),devolver.getTotalDevolver());
+        Credito credito2 = new Credito(2, new CreditoTipo("Prestamo", 10000.00, 100000.0, 1, 3, ClienteTipoEnum.PERSONA, 2.50),new Cliente("Federer", "Roger", 12364521, ClienteTipoEnum.PERSONA), 20500.00, 5,new Sucursal("Sucursal 1"),devolver.getTotalDevolver());
+        Credito credito5 = new Credito(5, new CreditoTipo("Prestamo", 10000.00, 100000.0, 1, 3, ClienteTipoEnum.PERSONA, 2.50),new Cliente("Del Potro", "Juan Martin", 24357537, ClienteTipoEnum.PERSONA), 18500.00, 5,new Sucursal("Sucursal 5"),devolver.getTotalDevolver());
+        Credito credito6 = new Credito(6, new CreditoTipo("Prestamo", 20000.00, 200000.0, 1, 4, ClienteTipoEnum.COMERCIO, 2.50),new Cliente("Pedro", "Juan", 24357537, ClienteTipoEnum.COMERCIO), 28500.00, 5,new Sucursal("Sucursal 2"),devolver.getTotalDevolver());
 
         Creditos.add(credito1);
         Creditos.add(credito4);
@@ -28,7 +28,8 @@ public class ClienteCreditos {
         Creditos.add(credito3);
         Creditos.add(credito6);
 
-        System.out.println(Creditos.size());
+        System.out.println("Tamaño de la lista: "+Creditos.size());
+        System.out.println("Credito por posicion 2:");
         System.out.println(Creditos.get(2));
         System.out.println("Removiendo un elemento");
         Creditos.remove(2);
@@ -50,12 +51,13 @@ public class ClienteCreditos {
         System.out.println("Ordenados por Total a devolver");
         Creditos.ordenar(new ClientesDevolverComparator());
         System.out.println(Creditos);
-       System.out.println("Ordenados por DNI de Clientes");
-        Creditos.ordenar(new ClientesPorDocumento());
-        System.out.println(Creditos);
+//       System.out.println("Ordenados por DNI de Clientes");
+//        Creditos.ordenar(new ClientesPorDocumento());
+//        System.out.println(Creditos);
 
-        } catch (Exception e) {
-        
-    }
-}
-}
+        } catch (Exception exc) {
+            System.out.println(exc.getCause());
+            System.out.println(exc.toString());
+        }//final del catch
+    }//final del main
+}//final de la clase

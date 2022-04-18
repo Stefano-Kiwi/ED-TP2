@@ -26,7 +26,7 @@ public class ClienteScoopsAhoy {
         facturaAdmin.remove(0);
         facturaAdmin.add(factura1);
         facturaAdmin.ordenar();
-        facturaAdmin.ordenar(c); // DEBEMOS IMPLEMENTAR ESTO
+//        facturaAdmin.ordenar(c); // DEBEMOS IMPLEMENTAR ESTO
         
         System.out.println("Filtrado por mes y año: "+facturaAdmin.buscarFacturasPorMesAnio(3, 2020));
         System.out.println("Filtrado por proveedor: "+facturaAdmin.buscarFacturasPorProveedor(empresa1));
