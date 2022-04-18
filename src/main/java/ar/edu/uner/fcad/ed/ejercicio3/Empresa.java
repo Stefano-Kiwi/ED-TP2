@@ -6,7 +6,7 @@ import java.util.Objects;
  *
  * @author stefa
  */
-public class Empresa implements Comparable<Empresa>{
+public class Empresa {
     private String cuit;
     private String razonSocial;
     private SituacionIVAEnum situacionIVA;
@@ -68,9 +68,5 @@ public class Empresa implements Comparable<Empresa>{
         return "Empresa{" + "cuit=" + cuit + ", razonSocial=" + razonSocial + ", situacionIVA=" + situacionIVA + '}';
     }
 
-//    @Override
-//    public int compareTo(Empresa o) {
-//        
-//    }
     
 }
