@@ -53,8 +53,13 @@ public class Credito implements Comparable <Credito> {
     }
     
     
-    public void setMontoAcordado(Double montoAcordado) {
-            this.montoAcordado = montoAcordado;
+    public void setMontoAcordado (Double montoAcordado) throws Exception  {
+    
+        if (montoAcordado > this.tipo.getMontoMaximo() || montoAcordado < this.tipo.getMontoMinimo()) {
+        throw new Exception("El monto acordado es mayor al Maximo o es menor al minimo disponible");  
+        }else{
+        this.montoAcordado = montoAcordado;
+        }
     }
    
     public Double getMontoAcordado() {
