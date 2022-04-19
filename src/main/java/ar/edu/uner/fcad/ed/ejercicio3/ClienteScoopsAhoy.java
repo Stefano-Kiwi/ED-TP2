@@ -66,6 +66,7 @@ public class ClienteScoopsAhoy {
         System.out.println("Filtrado por mes y año (03/2020): "+facturaAdmin.buscarFacturasPorMesAnio(3, 2020)+ "\n");
         System.out.println("Filtrado por proveedor(empresa1): "+facturaAdmin.buscarFacturasPorProveedor(empresa1)+ "\n");
         System.out.println("Factura con mayor importe total: "+facturaAdmin.facturaMasCostosa()+ "\n");
-        //System.out.println("Top 5 productos que más se compraron: "+facturaAdmin.top5ProductoCantidad()); // DEBEMOS IMPLEMENTAR ESTO
+        System.out.println("Top 5 productos que más se compraron: "+facturaAdmin.top5ProductoCantidad()); // DEBEMOS IMPLEMENTAR ESTO
     }
+    
 }
