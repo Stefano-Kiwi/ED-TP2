@@ -24,33 +24,37 @@ public class TorneosAdmin extends TorneoAdminAbstract {
     @Override
     public List<EquipoTorneo> tablaPosiciones(Torneo torneo) {  
         var res= new ArrayList<EquipoTorneo>();
-        int cantidad = 0;
+//        int cantidad = 0;
+    
        EquipoTorneo aux;
             System.out.println(torneo);
         for (var equipoTorneo : equipoTorneoList) {
             if (equipoTorneo.getTorneo().equals(torneo)) {
-                cantidad = cantidad + 1;
+                res.add(equipoTorneo);
             }
         }
-        int indice = 0;
-         EquipoTorneo [] arrayaux = new EquipoTorneo[cantidad];
-         for (var equipoTorneo : equipoTorneoList) {
-            if (equipoTorneo.getTorneo().equals(torneo)) {
-                arrayaux[indice++] = equipoTorneo;
-            }
-         }
-         for ( int i=0; i<arrayaux.length-1; i++){
-             for (int j=0; j<arrayaux.length-1;j++){
-                 if(arrayaux[j].getPuntos() <= arrayaux[j+1].getPuntos()){
-                     aux = arrayaux[j];
-                     arrayaux[j] = arrayaux[j+1];
-                     arrayaux[j+1] = aux;
-                 }
-              }
-            }
-         for ( int i=0; i<(arrayaux.length); i++){
-            res.add(arrayaux[i]);
-        }           
+        Collections.sort(res,new TorneoComparatorPuntos());
+    
+//        
+//        int indice = 0;
+//         EquipoTorneo [] arrayaux = new EquipoTorneo[cantidad];
+//         for (var equipoTorneo : equipoTorneoList) {
+//            if (equipoTorneo.getTorneo().equals(torneo)) {
+//                arrayaux[indice++] = equipoTorneo;
+//            }
+//         }
+//         for ( int i=0; i<arrayaux.length-1; i++){
+//             for (int j=0; j<arrayaux.length-1;j++){
+//                 if(arrayaux[j].getPuntos() <= arrayaux[j+1].getPuntos()){
+//                     aux = arrayaux[j];
+//                     arrayaux[j] = arrayaux[j+1];
+//                     arrayaux[j+1] = aux;
+//                 }
+//              }
+//            }
+//         for ( int i=0; i<(arrayaux.length); i++){
+//            res.add(arrayaux[i]);
+//        }           
         return res;
     }
 
@@ -67,28 +71,16 @@ public class TorneosAdmin extends TorneoAdminAbstract {
 
     @Override
     public EquipoTorneo masGoleador() {
-        int aux = 0;
-        var goleador= new EquipoTorneo();
-        for (var equipoTorneo : equipoTorneoList) {
-            if (equipoTorneo.getGolesAFavor()>aux) {
-                goleador = equipoTorneo;
-                aux = equipoTorneo.getGolesAFavor();
-            }    
-        }
+        EquipoTorneo goleador = new EquipoTorneo();
+        goleador=Collections.max(equipoTorneoList, new TorneoComparatorGolesMayor());
         return goleador;
     }
 
     @Override
     public EquipoTorneo vallaMenosVencida() {
-       int aux = 100000;
-        var antigoleador= new EquipoTorneo();
-        for (var equipoTorneo : equipoTorneoList) {
-            if (equipoTorneo.getGolesEnContra()<aux) {
-                antigoleador = equipoTorneo;
-                aux = equipoTorneo.getGolesEnContra();
-            }    
-        }
-        return antigoleador;
+        EquipoTorneo goleador = new EquipoTorneo();
+        goleador=Collections.min(equipoTorneoList, new TorneoComparatorMenoresGolesEnContra());
+        return goleador;
     }
 
     @Override
