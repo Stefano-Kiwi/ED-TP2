@@ -40,24 +40,8 @@ public class CreditoAdmin extends CreditoAdminAbstract {
    public  List<Credito> creditosPorCreditoTipoySucursal(CreditoTipo tipo,Sucursal sucursal){
        var res= new ArrayList<Credito>();
         for(var credito : creditosList){   
-            if (credito.getTipo().getDescripcion().equals(tipo.getDescripcion())) {
-                if (credito.getTipo().getMontoMinimo().equals(tipo.getMontoMinimo())) {
-                    if (credito.getTipo().getMontoMaximo().equals(tipo.getMontoMaximo())) {
-                     if (credito.getTipo().getAniosMinimo()==(tipo.getAniosMinimo())) {
-                          if (credito.getTipo().getAniosMaximo()==(tipo.getAniosMaximo())) {
-                               if (credito.getTipo().getClienteTipo()==(tipo.getClienteTipo())) {
-                                    if (credito.getTipo().getTasaInteres().equals(tipo.getTasaInteres())) {
-                                        if(credito.getSucursal().equals(sucursal)){
-                                        res.add(credito);
-                                        }   
-                                    }
-                                }
-                            }
-                         
-                        }
-                    }
-                }
- 
+                if (credito.getTipo().equals(tipo)&&credito.getSucursal().equals(sucursal)) {
+                res.add(credito);
             }
         }
             return res;

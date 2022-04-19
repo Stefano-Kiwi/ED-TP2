@@ -1,5 +1,6 @@
 package ar.edu.uner.fcad.ed.ejercicio2;
 
+import java.util.Collections;
 import java.util.Objects;
 import java.util.Comparator;
 
@@ -19,7 +20,7 @@ public class Cliente implements Comparable<Cliente>{
         this.Documento = Documento;
         this.Tipo = Tipo;
     }
-
+ 
     public String getApellido() {
         return Apellido;
     }

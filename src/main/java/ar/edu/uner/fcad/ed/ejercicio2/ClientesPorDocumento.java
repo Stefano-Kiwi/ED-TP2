@@ -10,15 +10,15 @@ import java.util.Comparator;
  *
  * @author David Zarcó
  */
-public class ClientesPorDocumento implements Comparator<Cliente>  {
+public class ClientesPorDocumento implements Comparator<Credito>  {
   
     @Override
-    public int compare(Cliente o1, Cliente o2) {
+    public int compare(Credito o1, Credito o2) {
          int res = -1;
-         if (o1.getDocumento()==(o2.getDocumento())) {
+         if (o1.getCliente().getDocumento()==(o2.getCliente().getDocumento())) {
           res = 0;  
         }else{
-             if (o1.getDocumento()>o2.getDocumento()) {
+             if (o1.getCliente().getDocumento()>o2.getCliente().getDocumento()) {
                  res = 1;    
              }
          }       

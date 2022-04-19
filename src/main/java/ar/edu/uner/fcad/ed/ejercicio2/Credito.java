@@ -14,17 +14,25 @@ public class Credito implements Comparable <Credito> {
         private Sucursal sucursal;
         private Double totalDevolver;
 
-    public Credito(int numero, CreditoTipo tipo, Cliente cliente, Double montoAcordado, int plazoAnios, Sucursal sucursal, Double totalDevolver) {
+    public Credito (int numero, CreditoTipo tipo, Cliente cliente, Double montoAcordado, int plazoAnios, Sucursal sucursal, Double totalDevolver) throws Exception{
         this.numeroDeCredito = numero;
         this.tipo = tipo;
         this.cliente = cliente;
+        if (montoAcordado > this.tipo.getMontoMaximo() || montoAcordado < this.tipo.getMontoMinimo()) {
+        throw new Exception("El monto "+montoAcordado+ " acordado es mayor al Maximo o es menor al posible otorgado"+"\n"+"En el credito a: "+cliente.getNombre()+" "+cliente.getApellido()+"\n"+"Por lo tanto el programa no funciona");  
+        }else{
         this.montoAcordado = montoAcordado;
+        }
         this.plazoAnios = plazoAnios;
         this.sucursal = sucursal;
         this.totalDevolver = montoAcordado*tipo.getTasaInteres();
     }
 
     public Credito() {
+    }
+
+    public Cliente getCliente() {
+        return cliente;
     }
     
 
@@ -53,13 +61,8 @@ public class Credito implements Comparable <Credito> {
     }
     
     
-    public void setMontoAcordado (Double montoAcordado) throws Exception  {
-    
-        if (montoAcordado > this.tipo.getMontoMaximo() || montoAcordado < this.tipo.getMontoMinimo()) {
-        throw new Exception("El monto acordado es mayor al Maximo o es menor al minimo disponible");  
-        }else{
+    public void setMontoAcordado (Double montoAcordado)  {
         this.montoAcordado = montoAcordado;
-        }
     }
    
     public Double getMontoAcordado() {

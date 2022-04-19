@@ -1,5 +1,7 @@
 package ar.edu.uner.fcad.ed.ejercicio2;
 
+import java.util.Objects;
+
 /**
  *
  * @author stefa
@@ -82,6 +84,45 @@ public class CreditoTipo {
     @Override
     public String toString() {
         return "CreditoTipo{" + "descripcion=" + descripcion + ", montoMinimo=" + montoMinimo + ", montoMaximo=" + montoMaximo + ", aniosMinimo=" + aniosMinimo + ", aniosMaximo=" + aniosMaximo + ", clienteTipo=" + clienteTipo + ", tasaInteres=" + tasaInteres + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreditoTipo other = (CreditoTipo) obj;
+        if (this.aniosMinimo != other.aniosMinimo) {
+            return false;
+        }
+        if (this.aniosMaximo != other.aniosMaximo) {
+            return false;
+        }
+        if (!Objects.equals(this.descripcion, other.descripcion)) {
+            return false;
+        }
+        if (!Objects.equals(this.montoMinimo, other.montoMinimo)) {
+            return false;
+        }
+        if (!Objects.equals(this.montoMaximo, other.montoMaximo)) {
+            return false;
+        }
+        if (this.clienteTipo != other.clienteTipo) {
+            return false;
+        }
+        return Objects.equals(this.tasaInteres, other.tasaInteres);
     }
          
       
