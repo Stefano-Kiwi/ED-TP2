@@ -24,37 +24,12 @@ public class TorneosAdmin extends TorneoAdminAbstract {
     @Override
     public List<EquipoTorneo> tablaPosiciones(Torneo torneo) {  
         var res= new ArrayList<EquipoTorneo>();
-//        int cantidad = 0;
-    
-       EquipoTorneo aux;
-            System.out.println(torneo);
         for (var equipoTorneo : equipoTorneoList) {
             if (equipoTorneo.getTorneo().equals(torneo)) {
                 res.add(equipoTorneo);
             }
         }
         Collections.sort(res,new TorneoComparatorPuntos());
-    
-//        
-//        int indice = 0;
-//         EquipoTorneo [] arrayaux = new EquipoTorneo[cantidad];
-//         for (var equipoTorneo : equipoTorneoList) {
-//            if (equipoTorneo.getTorneo().equals(torneo)) {
-//                arrayaux[indice++] = equipoTorneo;
-//            }
-//         }
-//         for ( int i=0; i<arrayaux.length-1; i++){
-//             for (int j=0; j<arrayaux.length-1;j++){
-//                 if(arrayaux[j].getPuntos() <= arrayaux[j+1].getPuntos()){
-//                     aux = arrayaux[j];
-//                     arrayaux[j] = arrayaux[j+1];
-//                     arrayaux[j+1] = aux;
-//                 }
-//              }
-//            }
-//         for ( int i=0; i<(arrayaux.length); i++){
-//            res.add(arrayaux[i]);
-//        }           
         return res;
     }
 
@@ -86,6 +61,9 @@ public class TorneosAdmin extends TorneoAdminAbstract {
     @Override
     public String toString() {
      return this.equipoTorneoList.toString();
+    }
+
+    void ordenar(ComparatorEquipoTorneo comparatorEquipoTorneo) {
     }
 
 }
