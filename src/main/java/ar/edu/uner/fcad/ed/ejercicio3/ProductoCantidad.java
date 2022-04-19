@@ -6,7 +6,7 @@ import java.util.Objects;
  *
  * @author stefa
  */
-class ProductoCantidad {
+class ProductoCantidad implements Comparable<ProductoCantidad>{
     private Producto producto;
     private int cant;
 
@@ -23,6 +23,24 @@ class ProductoCantidad {
         return hash;
     }
 
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public int getCant() {
+        return cant;
+    }
+
+    public void setCant(int cant) {
+        this.cant = cant;
+    }
+    public void sumarCantidad(int cantidad){
+        this.cant += cantidad;
+    }
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -47,5 +65,24 @@ class ProductoCantidad {
     public String toString() {
         return "ProductoCantidad{" + "producto=" + producto + ", cant=" + cant + '}';
     }
-    
+
+    @Override
+    public int compareTo(ProductoCantidad o) {
+        int resultado = -1;
+        if (this.getCant() == o.getCant()) {
+            resultado = 0;
+        } else {
+            if (this.getCant() > o.getCant()) {
+                resultado = 1;
+            } else {
+                if (this.getCant() < o.getCant()) {
+                    resultado = -1;
+                }
+            }
+
+        }
+
+        return resultado;
+    }
+
 }
